@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101820" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="JV Coach" />
+  <title>JV Softball Coach</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.svg" />
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">SHS JV Softball</p>
+      <h1>Coach Practice Hub</h1>
+    </div>
+    <button id="installButton" class="ghost-button" type="button" hidden>Install</button>
+  </header>
+
+  <main>
+    <section class="hero-card" aria-labelledby="todaysPracticeTitle">
+      <div>
+        <p class="eyebrow" id="todayDate"></p>
+        <h2 id="todaysPracticeTitle">Today’s Practice</h2>
+        <p id="practiceTheme" class="practice-theme">Loading practice focus…</p>
+      </div>
+      <label class="check-row hero-check">
+        <input type="checkbox" data-store="practice-prep-complete" />
+        <span>Practice plan reviewed</span>
+      </label>
+      <textarea data-store="today-notes" placeholder="Quick notes for today’s practice"></textarea>
+    </section>
+
+    <nav class="tab-nav" aria-label="Coach pages">
+      <button class="tab-button active" type="button" data-tab="home">Plan</button>
+      <button class="tab-button" type="button" data-tab="weekly">Weekly</button>
+      <button class="tab-button" type="button" data-tab="players">Players</button>
+      <button class="tab-button" type="button" data-tab="goals">Goals</button>
+      <button class="tab-button" type="button" data-tab="backup">Backup</button>
+    </nav>
+
+    <section id="home" class="page active" aria-labelledby="planTitle">
+      <h2 id="planTitle">Practice Flow</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Daily Standards</h3>
+          <label class="check-row"><input type="checkbox" data-store="standard-energy" /> Energy from first whistle</label>
+          <label class="check-row"><input type="checkbox" data-store="standard-communication" /> Loud defensive communication</label>
+          <label class="check-row"><input type="checkbox" data-store="standard-reset" /> Reset after mistakes</label>
+          <label class="check-row"><input type="checkbox" data-store="standard-hustle" /> Sprint on and off field</label>
+        </article>
+        <article class="card">
+          <h3>Practice Blocks</h3>
+          <label class="check-row"><input type="checkbox" data-store="block-warmup" /> Dynamic warmup + throwing progression</label>
+          <label class="check-row"><input type="checkbox" data-store="block-defense" /> Defensive fundamentals</label>
+          <label class="check-row"><input type="checkbox" data-store="block-offense" /> Quality at-bats and pressure offense</label>
+          <label class="check-row"><input type="checkbox" data-store="block-baserunning" /> Aggressive smart baserunning</label>
+        </article>
+      </div>
+      <article class="card">
+        <h3>Coach Clipboard</h3>
+        <textarea data-store="clipboard-notes" placeholder="Lineups, reminders, drill adjustments, player encouragement..."></textarea>
+      </article>
+    </section>
+
+    <section id="weekly" class="page" aria-labelledby="weeklyTitle">
+      <h2 id="weeklyTitle">Weekly Tracker</h2>
+      <form class="card form-grid" data-form="weeklyTracker">
+        <label>Week number<input type="number" min="1" data-field="weekNumber" placeholder="1" /></label>
+        <label>Defensive focus<input type="text" data-field="defensiveFocus" placeholder="Clean throws, first-step reads" /></label>
+        <label>Hitting focus<input type="text" data-field="hittingFocus" placeholder="Attack strikes early" /></label>
+        <label>Conditioning focus<input type="text" data-field="conditioningFocus" placeholder="Explosive first 3 steps" /></label>
+        <label>Team culture message<textarea data-field="cultureMessage" placeholder="This week’s message"></textarea></label>
+        <label>Practice notes<textarea data-field="practiceNotes" placeholder="What worked? What needs cleanup?"></textarea></label>
+        <label>Game notes<textarea data-field="gameNotes" placeholder="Game observations and adjustments"></textarea></label>
+      </form>
+    </section>
+
+    <section id="players" class="page" aria-labelledby="playersTitle">
+      <div class="section-header">
+        <h2 id="playersTitle">Player Development</h2>
+        <button id="addPlayerButton" class="primary-button" type="button">Add Player</button>
+      </div>
+      <form id="playerForm" class="card form-grid compact" hidden>
+        <input type="hidden" id="playerId" />
+        <label>Player name<input id="playerName" type="text" required /></label>
+        <label>Grade<input id="playerGrade" type="text" placeholder="9" /></label>
+        <label>Position<input id="playerPosition" type="text" placeholder="SS / OF / P" /></label>
+        <label>Strength<input id="playerStrength" type="text" /></label>
+        <label>Development need<input id="playerNeed" type="text" /></label>
+        <label>Speed rating 1-5<input id="playerSpeed" type="number" min="1" max="5" /></label>
+        <label>Confidence rating 1-5<input id="playerConfidence" type="number" min="1" max="5" /></label>
+        <label>Coach notes<textarea id="playerNotes"></textarea></label>
+        <div class="button-row">
+          <button class="primary-button" type="submit">Save Player</button>
+          <button id="cancelPlayerButton" class="ghost-button" type="button">Cancel</button>
+        </div>
+      </form>
+      <div id="playerList" class="player-list" aria-live="polite"></div>
+    </section>
+
+    <section id="goals" class="page" aria-labelledby="goalsTitle">
+      <h2 id="goalsTitle">Season Goals Dashboard</h2>
+      <form class="card form-grid" data-form="seasonGoals">
+        <div class="goal-callout">
+          <span>Errors goal</span>
+          <strong>Reduce from 57 to under 30</strong>
+        </div>
+        <label>Current errors<input type="number" min="0" data-field="currentErrors" placeholder="57" /></label>
+        <label>Strikeouts goal<input type="text" data-field="strikeoutsGoal" placeholder="Reduce K's with two-strike approach" /></label>
+        <label>Walks/HBP goal<input type="text" data-field="walksHbpGoal" placeholder="Earn free bases every game" /></label>
+        <label>Stolen base success<input type="text" data-field="stolenBaseSuccess" placeholder="80%+ success" /></label>
+        <label>Team batting average<input type="text" data-field="teamBattingAverage" placeholder=".300" /></label>
+        <label>Team culture notes<textarea data-field="teamCultureNotes" placeholder="Confidence, accountability, joy"></textarea></label>
+      </form>
+    </section>
+
+    <section id="backup" class="page" aria-labelledby="backupTitle">
+      <h2 id="backupTitle">Backup & Restore</h2>
+      <article class="card">
+        <p>Export your saved coach data as JSON, or import a previous backup to restore it on this device.</p>
+        <div class="button-row">
+          <button id="exportButton" class="primary-button" type="button">Export JSON</button>
+          <label class="file-button">Import JSON<input id="importInput" type="file" accept="application/json" /></label>
+        </div>
+        <textarea id="backupText" readonly placeholder="Exported JSON appears here for easy copy/paste."></textarea>
+        <p id="backupStatus" class="status-message" role="status"></p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built for quick decisions, steady confidence, and clean JV softball.</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
