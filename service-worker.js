@@ -1,4 +1,4 @@
-const CACHE_NAME = 'shs-jv-coach-v4';
+const CACHE_NAME = 'shs-jv-coach-v2';
 const APP_SHELL = [
   './',
   './index.html',
@@ -25,38 +25,17 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-self.addEventListener('message', (event) => {
-  if (event.data?.type === 'SKIP_WAITING') self.skipWaiting();
-});
-
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
-  if (event.request.mode === 'navigate') {
-    event.respondWith(networkFirst(event.request, './index.html'));
-    return;
-  }
-
-  event.respondWith(staleWhileRevalidate(event.request));
+  event.respondWith(
+    caches.match(event.request).then((cached) => {
+      if (cached) return cached;
+      return fetch(event.request).then((response) => {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        return response;
+      }).catch(() => caches.match('./index.html'));
+    })
+  );
 });
-
-async function networkFirst(request, fallbackUrl) {
-  const cache = await caches.open(CACHE_NAME);
-  try {
-    const response = await fetch(request, { cache: 'no-store' });
-    cache.put(request, response.clone());
-    return response;
-  } catch {
-    return caches.match(request) || caches.match(fallbackUrl);
-  }
-}
-
-async function staleWhileRevalidate(request) {
-  const cache = await caches.open(CACHE_NAME);
-  const cached = await caches.match(request);
-  const fetched = fetch(request).then((response) => {
-    cache.put(request, response.clone());
-    return response;
-  }).catch(() => cached);
-  return cached || fetched;
-}
