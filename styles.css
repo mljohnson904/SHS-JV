@@ -5,14 +5,13 @@
   --surface-2: #07306b;
   --royal: #0057b8;
   --royal-bright: #1677ff;
-  --gold: #f6c343;
   --text: #fff8e6;
   --muted: #b8c8dc;
-  --accent: var(--gold);
+  --accent: #f6c343;
   --accent-rgb: 246, 195, 67;
   --accent-2: #8bbcff;
   --danger: #fb7185;
-  --line: rgba(246, 195, 67, 0.22);
+  --line: rgba(246, 195, 67, 0.18);
   --shadow: 0 16px 42px rgba(0, 15, 45, 0.48);
 }
 
@@ -70,14 +69,16 @@ h2 { font-size: clamp(1.35rem, 6vw, 2rem); margin-bottom: 0.9rem; }
   border-radius: 1.1rem;
   background: linear-gradient(145deg, var(--royal), var(--surface));
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
-  overflow: hidden;
 }
 
-.brand-mark img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.brand-mark svg {
+  width: 80%;
+  height: 80%;
+  fill: var(--accent);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
 }
+
+.brand-mark-cut { fill: var(--surface); }
 
 h3 { margin-bottom: 0.75rem; color: #fff1bd; }
 
@@ -100,23 +101,10 @@ h3 { margin-bottom: 0.75rem; color: #fff1bd; }
 }
 
 .hero-card {
-  position: relative;
   display: grid;
   gap: 1rem;
   margin-bottom: 1rem;
-  overflow: hidden;
-  background:
-    linear-gradient(135deg, rgba(var(--accent-rgb), 0.2), rgba(4, 30, 66, 0.95)),
-    radial-gradient(circle at 88% 12%, rgba(0, 87, 184, 0.55), transparent 12rem);
-}
-
-.hero-logo {
-  position: absolute;
-  right: -1.6rem;
-  top: -1.2rem;
-  width: clamp(7.5rem, 38vw, 13rem);
-  opacity: 0.2;
-  pointer-events: none;
+  background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.18), rgba(4, 30, 66, 0.95));
 }
 
 .practice-theme {
@@ -307,8 +295,6 @@ textarea:focus {
 .file-button input { display: none; }
 .status-message { margin: 0.75rem 0 0; color: var(--accent-2); font-weight: 800; }
 footer { padding-block: 1rem max(1.5rem, env(safe-area-inset-bottom)); color: var(--muted); text-align: center; }
-footer a { color: var(--accent); }
-.source-note { margin-bottom: 0; font-size: 0.82rem; }
 
 @media (min-width: 720px) {
   .card-grid { grid-template-columns: repeat(2, 1fr); }

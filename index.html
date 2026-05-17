@@ -16,8 +16,12 @@
 <body>
   <header class="app-header">
     <div class="brand-lockup">
-      <div class="brand-mark">
-        <img src="icons/icon-192.svg" alt="Gold Sumter High gamecock logo" />
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 96 96" focusable="false">
+          <path d="M71 24c-9-10-24-13-38-7 6 2 10 5 12 9-12 0-22 8-26 19 7-5 15-6 23-3-9 4-16 11-19 21 12-8 26-8 39-1l-8 16 18-12c5-3 8-8 8-14 0-4-1-8-4-11l10-6-15-11Z" />
+          <path d="M56 31c4-2 8-2 12 0-3 4-7 6-13 6l1-6Z" class="brand-mark-cut" />
+          <circle cx="62" cy="28" r="3" class="brand-mark-cut" />
+        </svg>
       </div>
       <div>
         <p class="eyebrow">SHS JV Softball</p>
@@ -29,7 +33,6 @@
 
   <main>
     <section class="hero-card" aria-labelledby="todaysPracticeTitle">
-      <img class="hero-logo" src="icons/icon-512.svg" alt="Gold Sumter High gamecock logo" />
       <div>
         <p class="eyebrow" id="todayDate"></p>
         <h2 id="todaysPracticeTitle">Today’s Practice</h2>
@@ -142,7 +145,6 @@
 
   <footer>
     <p>Built for quick decisions, steady confidence, and clean JV softball.</p>
-    <p class="source-note">Gamecock reference: <a href="https://www.sumtergamecocks.com/page/39/">Sumter Gamecocks official athletics website</a>.</p>
   </footer>
 
   <script src="app.js" defer></script>
