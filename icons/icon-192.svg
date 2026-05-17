@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192" role="img" aria-label="JV Coach app icon">
-  <rect width="192" height="192" rx="44" fill="#101820"/>
-  <circle cx="96" cy="96" r="62" fill="#f7b733"/>
-  <path d="M45 96h102M96 34c19 24 19 100 0 124M96 34c-19 24-19 100 0 124" fill="none" stroke="#101820" stroke-width="9" stroke-linecap="round"/>
-  <text x="96" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="800" fill="#101820">JV</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192" role="img" aria-label="Gold gamecock logo for JV Coach app">
+  <rect width="192" height="192" rx="44" fill="#041E42"/>
+  <path d="M142 48c-18-20-48-26-76-14 12 4 20 10 24 18-24 0-44 16-52 38 14-10 30-12 46-6-18 8-32 22-38 42 24-16 52-16 78-2l-16 32 36-24c10-6 16-16 16-28 0-8-2-16-8-22l20-12-30-22Z" fill="#F6C343"/>
+  <path d="M112 62c8-4 16-4 24 0-6 8-14 12-26 12l2-12Z" fill="#041E42"/>
+  <circle cx="124" cy="56" r="6" fill="#041E42"/>
+  <path d="M52 132c22-8 44-7 66 3" fill="none" stroke="#0057B8" stroke-width="8" stroke-linecap="round"/>
 </svg>
