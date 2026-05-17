@@ -8,31 +8,31 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="JV Coach" />
   <title>JV Softball Coach</title>
-  <link rel="manifest" href="manifest.json?v=7" />
-  <link rel="apple-touch-icon" href="icons/icon-192.svg?v=7" />
-  <link rel="icon" href="icons/icon-192.svg?v=7" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.svg" />
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-app-version="practice-mode-v7">
+<body>
   <header class="app-header">
     <div class="brand-lockup">
-      <div class="brand-mark">
-        <img src="icons/icon-192.svg?v=7" alt="Gold Sumter S logo" />
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 96 96" focusable="false">
+          <path d="M71 24c-9-10-24-13-38-7 6 2 10 5 12 9-12 0-22 8-26 19 7-5 15-6 23-3-9 4-16 11-19 21 12-8 26-8 39-1l-8 16 18-12c5-3 8-8 8-14 0-4-1-8-4-11l10-6-15-11Z" />
+          <path d="M56 31c4-2 8-2 12 0-3 4-7 6-13 6l1-6Z" class="brand-mark-cut" />
+          <circle cx="62" cy="28" r="3" class="brand-mark-cut" />
+        </svg>
       </div>
       <div>
         <p class="eyebrow">SHS JV Softball</p>
         <h1>Coach Practice Hub</h1>
       </div>
     </div>
-    <div class="header-actions">
-      <span class="version-badge">Practice Mode v7</span>
-      <button id="installButton" class="ghost-button" type="button" hidden>Install</button>
-    </div>
+    <button id="installButton" class="ghost-button" type="button" hidden>Install</button>
   </header>
 
   <main>
     <section class="hero-card" aria-labelledby="todaysPracticeTitle">
-      <img class="hero-logo" src="icons/icon-512.svg?v=7" alt="Gold Sumter S logo" />
       <div>
         <p class="eyebrow" id="todayDate"></p>
         <h2 id="todaysPracticeTitle">Today’s Practice</h2>
@@ -46,79 +46,14 @@
     </section>
 
     <nav class="tab-nav" aria-label="Coach pages">
-      <button class="tab-button active" type="button" data-tab="practice">Practice</button>
-      <button class="tab-button" type="button" data-tab="home">Plan</button>
+      <button class="tab-button active" type="button" data-tab="home">Plan</button>
       <button class="tab-button" type="button" data-tab="weekly">Weekly</button>
       <button class="tab-button" type="button" data-tab="players">Players</button>
-      <button class="tab-button" type="button" data-tab="games">Games</button>
       <button class="tab-button" type="button" data-tab="goals">Goals</button>
-      <button class="tab-button" type="button" data-tab="culture">Culture</button>
       <button class="tab-button" type="button" data-tab="backup">Backup</button>
     </nav>
 
-    <section id="practice" class="page active" aria-labelledby="practiceModeTitle">
-      <div class="section-header">
-        <div>
-          <p class="eyebrow">4:00–6:00</p>
-          <h2 id="practiceModeTitle">Practice Mode</h2>
-        </div>
-        <span class="status-chip" id="practiceModeDate"></span>
-      </div>
-      <div class="practice-blocks">
-        <article class="card practice-block">
-          <div class="time-pill">4:00–4:20</div>
-          <h3>Warmup + Throwing Progression</h3>
-          <label>Assistant coach assignment<input type="text" data-store="assistant-warmup" placeholder="Coach name / station" /></label>
-          <div class="drill-list">
-            <a class="drill-card" href="https://www.youtube.com/results?search_query=softball+dynamic+warmup+throwing+progression" target="_blank" rel="noopener">Dynamic warmup + bands</a>
-            <a class="drill-card" href="https://www.youtube.com/results?search_query=softball+throwing+progression+drills" target="_blank" rel="noopener">Throwing progression</a>
-          </div>
-        </article>
-        <article class="card practice-block">
-          <div class="time-pill">4:20–4:55</div>
-          <h3>Defense: Clean First Touch</h3>
-          <label>Assistant coach assignment<input type="text" data-store="assistant-defense" placeholder="Coach name / station" /></label>
-          <div class="drill-list">
-            <a class="drill-card" href="https://www.youtube.com/results?search_query=softball+infield+footwork+drills" target="_blank" rel="noopener">Infield footwork</a>
-            <a class="drill-card" href="https://www.youtube.com/results?search_query=softball+outfield+drop+step+drill" target="_blank" rel="noopener">Outfield drop step</a>
-          </div>
-        </article>
-        <article class="card practice-block">
-          <div class="time-pill">4:55–5:30</div>
-          <h3>Offense: Pressure Quality ABs</h3>
-          <label>Assistant coach assignment<input type="text" data-store="assistant-offense" placeholder="Coach name / station" /></label>
-          <div class="drill-list">
-            <a class="drill-card" href="https://www.youtube.com/results?search_query=softball+hitting+tee+drills+quality+at+bats" target="_blank" rel="noopener">Tee quality rounds</a>
-            <a class="drill-card" href="https://www.youtube.com/results?search_query=softball+situational+hitting+drills" target="_blank" rel="noopener">Situational hitting</a>
-          </div>
-        </article>
-        <article class="card practice-block">
-          <div class="time-pill">5:30–5:50</div>
-          <h3>Baserunning + Varsity Speed</h3>
-          <label>Assistant coach assignment<input type="text" data-store="assistant-speed" placeholder="Coach name / station" /></label>
-          <div class="drill-list">
-            <a class="drill-card" href="https://www.youtube.com/results?search_query=softball+baserunning+first+step+drills" target="_blank" rel="noopener">First-step reads</a>
-            <a class="drill-card" href="https://www.youtube.com/results?search_query=softball+stolen+base+jump+drills" target="_blank" rel="noopener">Steal jumps</a>
-          </div>
-        </article>
-        <article class="card practice-block">
-          <div class="time-pill">5:50–6:00</div>
-          <h3>Reset + Culture Close</h3>
-          <label>Assistant coach assignment<input type="text" data-store="assistant-close" placeholder="Coach name / station" /></label>
-          <div class="drill-list">
-            <a class="drill-card" href="https://www.youtube.com/results?search_query=softball+team+communication+drills" target="_blank" rel="noopener">Communication close</a>
-            <a class="drill-card" href="https://www.youtube.com/results?search_query=mental+skills+softball+reset+after+mistake" target="_blank" rel="noopener">Mental reset</a>
-          </div>
-        </article>
-      </div>
-      <article class="card">
-        <h3>Attendance</h3>
-        <p class="muted-copy">Tap each player as present for today. Attendance is saved by date.</p>
-        <div id="attendanceList" class="attendance-list" aria-live="polite"></div>
-      </article>
-    </section>
-
-    <section id="home" class="page" aria-labelledby="planTitle">
+    <section id="home" class="page active" aria-labelledby="planTitle">
       <h2 id="planTitle">Practice Flow</h2>
       <div class="card-grid">
         <article class="card">
@@ -169,25 +104,6 @@
         <label>Development need<input id="playerNeed" type="text" /></label>
         <label>Speed rating 1-5<input id="playerSpeed" type="number" min="1" max="5" /></label>
         <label>Confidence rating 1-5<input id="playerConfidence" type="number" min="1" max="5" /></label>
-        <fieldset class="tag-fieldset">
-          <legend>Player tags</legend>
-          <label><input type="checkbox" name="playerTags" value="Varsity Ready" /> Varsity Ready</label>
-          <label><input type="checkbox" name="playerTags" value="Confidence Focus" /> Confidence Focus</label>
-          <label><input type="checkbox" name="playerTags" value="Speed Focus" /> Speed Focus</label>
-          <label><input type="checkbox" name="playerTags" value="Throwing Focus" /> Throwing Focus</label>
-          <label><input type="checkbox" name="playerTags" value="Hitting Focus" /> Hitting Focus</label>
-          <label><input type="checkbox" name="playerTags" value="IQ Focus" /> IQ Focus</label>
-        </fieldset>
-        <fieldset class="readiness-fieldset">
-          <legend>JV-to-varsity readiness (1-5)</legend>
-          <label>Defense<input id="playerDefense" type="number" min="1" max="5" /></label>
-          <label>Throwing<input id="playerThrowing" type="number" min="1" max="5" /></label>
-          <label>Speed<input id="playerReadinessSpeed" type="number" min="1" max="5" /></label>
-          <label>Hitting<input id="playerHitting" type="number" min="1" max="5" /></label>
-          <label>IQ<input id="playerIq" type="number" min="1" max="5" /></label>
-          <label>Confidence<input id="playerReadinessConfidence" type="number" min="1" max="5" /></label>
-          <label>Coachability<input id="playerCoachability" type="number" min="1" max="5" /></label>
-        </fieldset>
         <label>Coach notes<textarea id="playerNotes"></textarea></label>
         <div class="button-row">
           <button class="primary-button" type="submit">Save Player</button>
@@ -195,29 +111,6 @@
         </div>
       </form>
       <div id="playerList" class="player-list" aria-live="polite"></div>
-    </section>
-
-    <section id="games" class="page" aria-labelledby="gamesTitle">
-      <div class="section-header">
-        <h2 id="gamesTitle">Game Log</h2>
-        <button id="addGameButton" class="primary-button" type="button">Add Game</button>
-      </div>
-      <form id="gameForm" class="card form-grid compact" hidden>
-        <input type="hidden" id="gameId" />
-        <label>Date<input id="gameDate" type="date" /></label>
-        <label>Opponent<input id="gameOpponent" type="text" required placeholder="Opponent" /></label>
-        <label>Score<input id="gameScore" type="text" placeholder="SHS 8, Opp 4" /></label>
-        <label>Errors<input id="gameErrors" type="number" min="0" /></label>
-        <label>Strikeouts<input id="gameStrikeouts" type="number" min="0" /></label>
-        <label>Walks/HBP<input id="gameWalksHbp" type="number" min="0" /></label>
-        <label>Stolen bases<input id="gameStolenBases" type="number" min="0" /></label>
-        <label>Team notes<textarea id="gameNotes" placeholder="Adjustments, culture moments, lineup notes"></textarea></label>
-        <div class="button-row">
-          <button class="primary-button" type="submit">Save Game</button>
-          <button id="cancelGameButton" class="ghost-button" type="button">Cancel</button>
-        </div>
-      </form>
-      <div id="gameList" class="player-list" aria-live="polite"></div>
     </section>
 
     <section id="goals" class="page" aria-labelledby="goalsTitle">
@@ -228,36 +121,12 @@
           <strong>Reduce from 57 to under 30</strong>
         </div>
         <label>Current errors<input type="number" min="0" data-field="currentErrors" placeholder="57" /></label>
-        <label>Strikeouts current<input type="number" min="0" data-field="strikeoutsCurrent" placeholder="0" /></label>
-        <label>Strikeouts goal<input type="number" min="0" data-field="strikeoutsGoal" placeholder="80" /></label>
-        <label>Walks/HBP current<input type="number" min="0" data-field="walksHbpCurrent" placeholder="0" /></label>
-        <label>Walks/HBP goal<input type="number" min="0" data-field="walksHbpGoal" placeholder="60" /></label>
-        <label>Stolen bases current<input type="number" min="0" data-field="stolenBaseCurrent" placeholder="0" /></label>
-        <label>Stolen base goal<input type="number" min="0" data-field="stolenBaseGoal" placeholder="40" /></label>
-        <label>Team batting average<input type="number" min="0" max="1" step="0.001" data-field="teamBattingAverage" placeholder=".300" /></label>
-        <label>Batting average goal<input type="number" min="0" max="1" step="0.001" data-field="teamBattingAverageGoal" placeholder=".300" /></label>
+        <label>Strikeouts goal<input type="text" data-field="strikeoutsGoal" placeholder="Reduce K's with two-strike approach" /></label>
+        <label>Walks/HBP goal<input type="text" data-field="walksHbpGoal" placeholder="Earn free bases every game" /></label>
+        <label>Stolen base success<input type="text" data-field="stolenBaseSuccess" placeholder="80%+ success" /></label>
+        <label>Team batting average<input type="text" data-field="teamBattingAverage" placeholder=".300" /></label>
         <label>Team culture notes<textarea data-field="teamCultureNotes" placeholder="Confidence, accountability, joy"></textarea></label>
       </form>
-      <div id="goalProgress" class="goal-progress-list" aria-live="polite"></div>
-    </section>
-
-    <section id="culture" class="page" aria-labelledby="cultureTitle">
-      <h2 id="cultureTitle">Reset After Mistake</h2>
-      <article class="card">
-        <p class="muted-copy">Use short, repeatable phrases so players can recover quickly and stay aggressive.</p>
-        <div class="phrase-grid">
-          <button class="phrase-card" type="button">Flush it. Next pitch.</button>
-          <button class="phrase-card" type="button">Eyes up, body language up.</button>
-          <button class="phrase-card" type="button">Breathe, reset, compete.</button>
-          <button class="phrase-card" type="button">Want the next ball.</button>
-          <button class="phrase-card" type="button">One play does not define us.</button>
-          <button class="phrase-card" type="button">Aggressive mistake, fast recovery.</button>
-        </div>
-      </article>
-      <article class="card">
-        <h3>Culture Notes</h3>
-        <textarea data-store="reset-culture-notes" placeholder="Team reset language, player confidence reminders, dugout leadership notes..."></textarea>
-      </article>
     </section>
 
     <section id="backup" class="page" aria-labelledby="backupTitle">
@@ -276,9 +145,8 @@
 
   <footer>
     <p>Built for quick decisions, steady confidence, and clean JV softball.</p>
-    <p class="source-note">App version: Practice Mode v7</p>
   </footer>
 
-  <script src="app.js?v=7" defer></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
