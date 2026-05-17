@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Gold gamecock logo for JV Coach app">
+  <rect width="512" height="512" rx="116" fill="#041E42"/>
+  <path d="M379 128c-48-53-128-69-203-37 32 11 53 27 64 48-64 0-117 43-139 101 37-27 80-32 123-16-48 21-85 59-101 112 64-43 139-43 208-5l-43 85 96-64c27-16 43-43 43-75 0-21-5-43-21-59l53-32-80-58Z" fill="#F6C343"/>
+  <path d="M299 165c21-11 43-11 64 0-16 21-37 32-69 32l5-32Z" fill="#041E42"/>
+  <circle cx="331" cy="149" r="16" fill="#041E42"/>
+  <path d="M139 352c59-21 117-19 176 8" fill="none" stroke="#0057B8" stroke-width="22" stroke-linecap="round"/>
+</svg>
