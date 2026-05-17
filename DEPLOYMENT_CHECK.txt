@@ -1,0 +1,9 @@
+SHS JV Coach deployment check
+
+After pulling/deploying this commit, the live app should show:
+- Header badge: Practice Mode v8
+- Footer text: App version: Practice Mode v8
+- Navigation tabs: Practice, Plan, Weekly, Players, Games, Goals, Culture, Backup
+- Logo: gold capital S on royal blue
+
+If the live site does not show Practice Mode v8, GitHub Pages is still serving another branch/folder or an older deployment.
