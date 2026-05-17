@@ -1,4 +1,4 @@
-const CACHE_NAME = 'shs-jv-coach-v3';
+const CACHE_NAME = 'shs-jv-coach-v2';
 const APP_SHELL = [
   './',
   './index.html',
