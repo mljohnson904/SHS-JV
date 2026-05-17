@@ -1,0 +1,25 @@
+{
+  "name": "SHS JV Softball Coach",
+  "short_name": "JV Coach",
+  "description": "Mobile-first practice, player development, goals, and weekly tracking for JV softball coaches.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#020b1f",
+  "theme_color": "#041E42",
+  "icons": [
+    {
+      "src": "icons/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
